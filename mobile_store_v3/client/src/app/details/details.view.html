@@ -1,0 +1,45 @@
+<div class = "col-lg-4 col-md-3 col-sm-3">
+	<div class="detail_wrap">
+		<div class="details_img">
+			<img class="det_img" ng-src="http://localhost:4001/api/v1/{{details.imageUrl}}">
+			<div class="detail_ul_li">
+			<ul class="detail_ul">
+				<li ng-repeat="image in details.phone.images">
+					<img ng-src="http://localhost:4001/api/v1/{{image}}"
+					ng-click="details.setImage(image)">
+				</li>				
+			</ul>
+			</div>
+
+		</div>
+
+			<div class="detail_descript">
+			<div class="detail_name">{{details.phone.name}}</div>
+			<h4>Specification:</h4>
+			{{details.phone.description[0]}}
+			</div>
+	</div>		
+			
+	<div class="detail_prina">
+		<div class="detail_rev"><h2>Reviews:</h2></div>
+	</div>
+
+	<comments ng-repeat = "comment in details.comments" comment="comment"></comments>
+
+	<div class="detail_form">
+		<form class="det_form">
+			<label class="text_blue"><b>Eter your reviews:</b></label></br>
+			<input ng-model="details.model.author" class="detail_author" type='text' size='40' placeholder="Autor name..."> 
+			<input ng-model="details.model.item_rating" class="detail_rating" placeholder="Rating..."> </br>
+			<textarea ng-model="details.model.text" class="detail_textarea" name="comment" cols="40" rows="5"></textarea></br>
+			<div ng-click="details.setReview()" class="detail_btn_form btn btn-default">Add review</div>
+		</form>	
+	</div>
+
+
+
+
+
+
+
+</div>

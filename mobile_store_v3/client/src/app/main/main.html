@@ -1,0 +1,19 @@
+
+<div ng-repeat="phone in vm.items" class = "col-lg-4 col-md-3 col-sm-3" id="main_li">
+
+	<a ui-sref="details({id: phone._id})">
+	
+			<div class="main_img">
+				<img class="my_img" ng-src="http://localhost:4001/api/v1/{{phone.imgUrl}}">
+			</div>
+
+	</a>
+		<div class="phone_prina">
+			<div class="phone_name">{{phone.name}}</div>
+			<div class="phone_price">{{phone.price}}$</div>
+		</div>
+		<div class="main_text"><p>{{phone.description}}</p>
+		</div>
+		<button class="btn_main">ADD</button>
+</div>
+
